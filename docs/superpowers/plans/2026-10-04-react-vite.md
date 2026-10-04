@@ -9,4 +9,4 @@
 - [x] Convert the existing markup to JSX section components, retain exact whitespace and attributes, and implement menu/gallery state with React.
 - [x] Build with Vite, update run/deployment instructions, and retire the former entry script and server.
 - [x] Compare the rendered markup, text, styles and assets to the baseline; verify browser interactions and responsive geometry.
-- [ ] Commit and push the verified migration to the existing GitHub repository.
+- [x] Commit and push the verified migration to the existing GitHub repository.
