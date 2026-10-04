@@ -1,0 +1,3 @@
+# Preserve the approved visual assets and CSS exactly on every platform.
+public/** -text
+src/styles.css -text

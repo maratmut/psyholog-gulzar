@@ -1,4 +1,7 @@
 node_modules/
+dist/
+.verification/
+.npm-cache/
 __pycache__/
 *.py[cod]
 .env

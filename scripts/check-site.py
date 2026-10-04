@@ -7,7 +7,7 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 Tree = runpy.run_path(str(ROOT/'scripts/capture-source.py'))['Tree']
-page = (ROOT/'index.html').read_text(encoding='utf-8')
+page = (ROOT/'.verification/rendered.html').read_text(encoding='utf-8')
 tree = Tree()
 tree.feed(page)
 nodes = list(tree.root.walk())
@@ -23,7 +23,7 @@ missing_links = [url for url in required if url not in links]
 booking = next((unquote(h) for h in links if h.startswith('https://wa.me/79993293316?text=')), '')
 assert booking.endswith('Здравствуйте! Хочу записаться на консультацию к Гюльзар.'), 'Original booking message changed'
 local = [n.attrs[key] for n in nodes for key in ('src','href','data-image') if n.attrs.get(key) and not n.attrs[key].startswith(('https:','http:','#'))]
-missing_files = [url for url in local if not (ROOT/url).is_file()]
+missing_files = [url for url in local if not (ROOT/'public'/url).is_file()]
 assert not missing_copy, f'Missing source copy: {missing_copy}'
 assert not broken_anchors, f'Broken section anchors: {broken_anchors}'
 assert not missing_links, f'Missing original external destinations: {missing_links}'

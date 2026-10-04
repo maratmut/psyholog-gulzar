@@ -2,10 +2,26 @@
   "name": "gulzar-psychologist",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Responsive standalone website for psychologist Gulzar",
   "scripts": {
-    "dev": "node server.mjs",
-    "start": "node server.mjs",
-    "check": "node --check app.js && node --check server.mjs"
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test tests/site.test.mjs",
+    "check": "npm run test && npm run build"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "parse5": "8.0.1",
+    "vite": "8.3.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

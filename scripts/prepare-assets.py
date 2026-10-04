@@ -6,7 +6,7 @@ from PIL import Image, ImageOps, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 raw = ROOT / 'reference' / 'assets'
-out = ROOT / 'assets'
+out = ROOT / 'public' / 'assets'
 raw.mkdir(exist_ok=True)
 out.mkdir(exist_ok=True)
 media = json.loads((ROOT / 'reference' / 'media.json').read_text(encoding='utf-8'))
